@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#57DDDADA"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="5dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:id="@+id/txt_rupiah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="11dp"
+                        android:text="Rp 10.000.000"
+                        android:textSize="15dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:layout_below="@+id/txt_rupiah"
+                        android:text="Pulsa anda"
+                        android:textSize="11dp"
+                        android:textColor="@android:color/black"/>
+
+                    <Button
+                        android:id="@+id/btn_isi"
+                        android:text="Isi"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:background="@drawable/btn_rounded"
+                        android:layout_width="54dp"
+                        android:layout_height="26dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:layout_toLeftOf="@id/line"
+                        android:clickable="true"/>
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="2dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="#57DDDADA" />
+
+                    <TextView
+                        android:id="@+id/txt_kirim_hadiah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/line"
+                        android:text="Kirim Hadiah"
+                        android:textSize="15dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:layout_below="@+id/txt_kirim_hadiah"
+                        android:layout_toRightOf="@id/line"
+                        android:text="Pulsa dan Paket"
+                        android:textSize="11dp"
+                        android:textColor="@android:color/black"/>
+
+                    <Button
+                        android:id="@+id/btn_kirim"
+                        android:text="Kirim"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:background="@drawable/btn_rounded"
+                        android:layout_width="54dp"
+                        android:layout_height="26dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/txt_kirim_hadiah"
+                        android:clickable="true"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            //Pembatas
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#57DDDADA"
+                android:orientation="vertical"></LinearLayout>
+
+
+            //Special untuk Anda
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/txt_special"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Special untuk Anda"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:drawableLeft="@drawable/ic_medal"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginLeft="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Semua"
+                    android:textSize="13dp"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_toRightOf="@+id/txt_special"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginLeft="142dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="397dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginLeft="16dp"/>
+
+                <com.kingfisher.easyviewindicator.RecyclerViewIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recycler"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="13dp"
+                    app:avi_animation_enable="false"
+                    app:avi_drawable="@drawable/indicator_merah"
+                    app:avi_drawable_unselected="@drawable/indicator_putih"
+                    app:avi_gravity="fill"
+                    app:avi_height="8dp"
+                    app:avi_width="8dp" />
+
+
+            </RelativeLayout>
+
+
+            //Pembatas
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#57DDDADA"
+                android:orientation="vertical"></LinearLayout>
+
+
+            //Pilih Paket Kuota
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/txt_pilih"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Paket Kuota"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:drawableLeft="@drawable/ic_medal"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginLeft="17dp"/>
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_pilih"
+                    android:padding="10dp">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        app:tabTextAppearance="@style/MyTabLayoutTextAppearance">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Internet"
+                            android:icon="@drawable/ic_internett"
+                            />
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Telepon  SMS"
+                            android:icon="@drawable/ic_phone"
+                            />
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Roaming"
+                            android:icon="@drawable/ic_plane"
+                            />
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Multimedia"
+                            android:icon="@drawable/ic_star"
+                            />
+
+
+                    </com.google.android.material.tabs.TabLayout>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_paket"
+                android:layout_width="110dp"
+                android:layout_height="35dp"
+                android:text="Paket Terbaik"
+                android:gravity="center"
+                android:background="@drawable/btn_paket"
+                android:textSize="11dp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp" />
+
+            <Button
+                android:id="@+id/btn_kuota"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:text="Kuota Keluarga"
+                android:textSize="11dp"
+                android:background="@drawable/btn_rounded_gray"
+                android:textAllCaps="false"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/btn_paket"/>
+
+            <Button
+                android:id="@+id/btn_kosong"
+                android:layout_width="65dp"
+                android:layout_height="35dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:background="@drawable/btn_rounded_gray"
+                android:textSize="11dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/btn_kuota"/>
+
+            <Button
+                android:layout_width="127dp"
+                android:layout_height="35dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textSize="11dp"
+                android:background="@drawable/btn_rounded_gray"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/btn_kosong"/>
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="56dp"
+                        android:layout_height="16dp"
+                        android:text="   Promo"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/trapesium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Combo Internet OMG!"
+                        android:layout_marginTop="27dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="27 GB"
+                        android:textSize="29sp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginLeft="115dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#57C3C2C2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 Hari"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginTop="58dp"
+                        android:layout_marginLeft="126dp"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 179.000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="83dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/holo_red_light"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 195.000"
+                        android:textSize="18sp"
+                        android:layout_marginTop="88dp"
+                        android:layout_marginLeft="140dp"
+                        android:textColor="#616F7171"
+                        />
+
+                    <View
+                        android:layout_width="105dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="104dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#57C3C2C2" />
+
+                    <ImageView
+                        android:layout_width="76dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/ic_omg"
+                        android:layout_marginLeft="303dp"
+                        android:layout_marginTop="3dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="155dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Internet OMG!"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14 GB"
+                        android:textSize="29sp"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <View
+                        android:id="@+id/linee"
+                        android:layout_width="1dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginLeft="115dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#57C3C2C2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 Hari"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginLeft="126dp"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 115.000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="83dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/holo_red_light"
+                        />
+
+                    <ImageView
+                        android:layout_width="76dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/ic_omg"
+                        android:layout_marginLeft="303dp"
+                        android:layout_marginTop="3dp"
+                        />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="294dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kuota Keluarga"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 GB"
+                        android:textSize="29sp"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginLeft="115dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#57C3C2C2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 Hari"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginLeft="126dp"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 250.000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="83dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/holo_red_light"
+                        />
+
+                    <ImageView
+                        android:layout_width="66dp"
+                        android:layout_height="59dp"
+                        android:background="@drawable/ic_keluarga"
+                        android:layout_marginLeft="308dp"
+                        android:layout_marginTop="3dp"
+                        />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="433dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kuota Keluarga"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90 GB"
+                        android:textSize="29sp"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/black"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginLeft="115dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#57C3C2C2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 Hari"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginLeft="126dp"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 400.000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="83dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/holo_red_light"
+                        />
+
+                    <ImageView
+                        android:layout_width="66dp"
+                        android:layout_height="59dp"
+                        android:background="@drawable/ic_keluarga"
+                        android:layout_marginLeft="308dp"
+                        android:layout_marginTop="3dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            //Pembatas
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#57DDDADA"
+                android:orientation="vertical"></LinearLayout>
+
+
+            //Pembelian Terakhir
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_pembelian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Pembelian Terakhir"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:drawableLeft="@drawable/ic_reverse"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginLeft="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Semua"
+                    android:textSize="13dp"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_toRightOf="@+id/txt_pembelian"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginLeft="142dp"/>
+
+                <TextView
+                    android:id="@+id/txt_beli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beli kembali paket yang terakhir Anda beli"
+                    android:textSize="11dp"
+                    android:textColor="@android:color/black"
+                    android:layout_below="@+id/txt_pembelian"
+                    android:layout_marginLeft="17dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_below="@id/txt_beli"
+                    app:cardCornerRadius="5dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/telepon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_telephone"
+                        android:layout_gravity="center|left"
+                        android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                        android:id="@+id/txt_paket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paket Telepon 24 Jam"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="17dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_tanggal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="31 Des 2019 12:00:01"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="37dp"
+                        android:textSize="11dp"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_beli"
+                        android:layout_width="90dp"
+                        android:layout_height="40dp"
+                        android:text="Beli"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center|end"
+                        android:background="@drawable/btn_rounded"
+                        android:textAllCaps="false"
+                        android:layout_marginRight="15dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
