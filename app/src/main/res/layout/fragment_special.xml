@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".specialFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/txt_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Special untuk Anda"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:drawableLeft="@drawable/ic_medal"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="17dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lihat Semua"
+            android:textSize="13dp"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_toRightOf="@+id/txt_special"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="142dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="397dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="52dp"
+            android:layout_marginLeft="16dp"/>
+
+        <com.kingfisher.easyviewindicator.RecyclerViewIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="13dp"
+            app:avi_animation_enable="false"
+            app:avi_drawable="@drawable/indicator_merah"
+            app:avi_drawable_unselected="@drawable/indicator_putih"
+            app:avi_gravity="fill"
+            app:avi_height="8dp"
+            app:avi_width="8dp" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

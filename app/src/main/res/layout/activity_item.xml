@@ -7,14 +7,16 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="310dp"
-        android:layout_height="120dp"
+        android:layout_height="match_parent"
         android:layout_marginBottom="5dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="4dp">
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/transparent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/cardview_border_special">
 
 
             <ImageView
@@ -40,33 +42,32 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/ic_omg"/>
+                android:background="@drawable/ic_omg" />
 
             <TextView
                 android:id="@+id/textRecycle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Combo Internet OMG!"
-                android:layout_marginTop="27dp"
                 android:layout_marginLeft="20dp"
-                android:textColor="@android:color/black"/>
+                android:layout_marginTop="27dp"
+                android:text="Combo Internet OMG!"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/textRecycle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="27 GB"
-                android:textSize="29sp"
-                android:layout_marginTop="45dp"
                 android:layout_marginLeft="20dp"
-                android:textColor="@android:color/black"/>
+                android:layout_marginTop="45dp"
+                android:text="27 GB"
+                android:textColor="@android:color/black"
+                android:textSize="29sp" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="55dp"
                 android:layout_marginLeft="115dp"
-                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
                 android:background="#57C3C2C2" />
 
 
@@ -74,42 +75,39 @@
                 android:id="@+id/textRecycle3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30 Hari"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginTop="58dp"
                 android:layout_marginLeft="126dp"
-                android:textColor="@android:color/black"/>
+                android:layout_marginTop="58dp"
+                android:text="30 Hari"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textRecycle4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rp. 179.000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="83dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="83dp"
+                android:text="Rp. 179.000"
                 android:textColor="@android:color/holo_red_light"
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textRecycle5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rp. 195.000"
-                android:textSize="18sp"
-                android:layout_marginTop="88dp"
                 android:layout_marginLeft="140dp"
+                android:layout_marginTop="88dp"
+                android:text="Rp. 195.000"
                 android:textColor="#616F7171"
-                />
+                android:textSize="18sp" />
 
             <View
                 android:layout_width="105dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="104dp"
                 android:layout_marginLeft="140dp"
-                android:layout_centerHorizontal="true"
+                android:layout_marginTop="104dp"
                 android:background="#57C3C2C2" />
 
         </RelativeLayout>

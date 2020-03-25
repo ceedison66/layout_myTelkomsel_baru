@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".pembelianFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_pembelian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Pembelian Terakhir"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:drawableLeft="@drawable/ic_reverse"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="17dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lihat Semua"
+            android:textSize="13dp"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_toRightOf="@+id/txt_pembelian"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="142dp"/>
+
+        <TextView
+            android:id="@+id/txt_beli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beli kembali paket yang terakhir Anda beli"
+            android:textSize="11dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/txt_pembelian"
+            android:layout_marginLeft="17dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@id/txt_beli"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="@drawable/cardview_border">
+
+                <ImageView
+                    android:id="@+id/telepon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_telephone"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:id="@+id/txt_paket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paket Telepon 24 Jam"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="17dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_tanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31 Des 2019 12:00:01"
+                    android:textColor="@android:color/black"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="37dp"
+                    android:textSize="11dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_beli"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:text="Beli"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_rounded"
+                    android:textAllCaps="false"
+                    android:layout_toRightOf="@+id/txt_paket"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="16dp"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</FrameLayout>

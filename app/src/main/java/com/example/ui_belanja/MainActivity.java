@@ -5,12 +5,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import android.app.AlertDialog;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.kingfisher.easyviewindicator.RecyclerViewIndicator;
 
 import java.lang.reflect.Array;
@@ -43,6 +47,33 @@ public class MainActivity extends AppCompatActivity {
         indicator.setRecyclerView(recycler);
         dataList();
 
+
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        TabItem tabInternet = findViewById(R.id.tab_internet);
+        TabItem tabTelepon = findViewById(R.id.tab_telepon);
+        TabItem tabRoaming = findViewById(R.id.tab_roaming);
+        TabItem tabMultimedia = findViewById(R.id.tab_multimedia);
+        final ViewPager viewPager = findViewById(R.id.viewPager);
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+
+        viewPager.setAdapter(pagerAdapter);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     private void dataList() {
